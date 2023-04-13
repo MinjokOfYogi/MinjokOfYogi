@@ -12,6 +12,6 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <body>
-회원가입할래
+ggg
 </body>
 </html>
