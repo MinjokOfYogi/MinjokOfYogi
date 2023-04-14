@@ -17,13 +17,15 @@
 		비밀번호: <input type="text" name="USER_pass" size="5">
 		<button type="submit">로그인</button>
 	</form>
+	
 	<button onclick="location.href='join'">회원가입</button>
+	<button onclick="location.href='ownerjoin'">사장회원가입</button>
 	<br>
 	<br>
 
 	<!-- 권한은 나중에 -->
 	<button onclick="location.href='mypage'">마이페이지</button>
-	<button onclick="location.href='ownerpage'">사장님페이지</button>
+	<button onclick="location.href='ownerlogin'">사장님페이지</button>
 	<button onclick="location.href='adminpage'">관리자페이지</button>
 	<br>
 
