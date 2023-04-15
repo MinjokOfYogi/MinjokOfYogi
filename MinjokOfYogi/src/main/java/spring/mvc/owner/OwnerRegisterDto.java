@@ -7,26 +7,34 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.ColumnDefault;
-
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "OWNER")
-@Data
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class OwnerRegisterDto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long OWN_id;
+	@Column(name = "own_id")
+	private long ownId;
+	@Column(name = "own_ownerid")
+	private String ownOwnerid;
+	@Column(name = "own_pass")
+	private String ownPass;
+	@Column(name = "own_name")
+	private String ownName;
+	@Column(name = "own_phone")
+	private String ownPhone;
 	@Column
-	private String OWN_ownerid;
-	@Column
-	private String OWN_pass;
-	@Column
-	private String OWN_name;
-	@Column
-	private String OWN_phone;
-	@Column
-	private String login_type;
+	@Builder.Default private String login_type = "owner";
 }

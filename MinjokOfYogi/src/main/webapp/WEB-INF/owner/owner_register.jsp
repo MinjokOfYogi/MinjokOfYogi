@@ -23,7 +23,6 @@
 	<input type="password" name="OWN_pass">
 	전화번호
 	<input type="text" name="OWN_phone">
-	<input type="hidden" name="login_type" value="owner">
 	
 	<button type="submit">가입</button>
 </form>

@@ -12,9 +12,9 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <body>
-	<form action="manage" method="post">
-		사장아이디: <input type="text" name="own_ownerid" size="5"><br>
-		사장비밀번호: <input type="text" name="own_pass" size="5">
+	<form action="login-check" method="post">
+		사장아이디: <input type="text" name="ownOwnerid" size="5"><br>
+		사장비밀번호: <input type="text" name="ownPass" size="5">
 		<button type="submit">로그인</button>
 	</form>
 </body>

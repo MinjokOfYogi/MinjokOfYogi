@@ -12,8 +12,8 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <body>
-
-내 가게 수 : ${dto.count }개<br>
+	<a href="addRestaurant">입점신청</a><br>
+내 가게 수 : ${count }개<br>
 가게목록
 <table>
 
