@@ -16,13 +16,13 @@
 
 <form action="addDB" method="post">
 	이름
-	<input type="text" name="OWN_name">
+	<input type="text" name="ownName">
 	아이디
-	<input type="text" name="OWN_ownerid">
+	<input type="text" name="ownOwnerid">
 	비밀번호
-	<input type="password" name="OWN_pass">
+	<input type="password" name="ownPass">
 	전화번호
-	<input type="text" name="OWN_phone">
+	<input type="text" name="ownPhone">
 	
 	<button type="submit">가입</button>
 </form>

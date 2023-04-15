@@ -30,6 +30,11 @@ public class OwnerRegisterDao {
 		//db에서 가져올 데이터 : userData
 		
 		OwnerRegisterDto userData = ownerInter.findByOwnOwnerid(dto.getOwnOwnerid());
+		if(userData==null) {
+			String loginok="no";
+			return loginok;
+		}
+		
 		if(dto.getOwnOwnerid().equals(userData.getOwnOwnerid()) && dto.getOwnPass().equals(userData.getOwnPass())) {
 			String loginok="yes";
 			return loginok;

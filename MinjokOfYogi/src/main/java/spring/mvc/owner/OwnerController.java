@@ -48,13 +48,13 @@ public class OwnerController {
 		return model;
 	}
 	@PostMapping(value = "/login-check")
-	public String test(@ModelAttribute OwnerRegisterDto dto) {
+	public String ownerLogin(@ModelAttribute OwnerRegisterDto dto) {
 		String loginok = dao.selectData(dto);
 		
 		if(loginok=="yes") {
 			return "/owner/managepage";
 		}else {
-			return "redirect:owner_login";
+			return "/owner/owner_login";
 			
 		}
 		//getDataById() 해서 객체에 넣고 아이디 비밀번호 같은지 확인
