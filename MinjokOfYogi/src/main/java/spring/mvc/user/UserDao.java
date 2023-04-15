@@ -12,4 +12,8 @@ public class UserDao {
 	public void join_user(UserDto dto) {
 		userInter.save(dto);
 	}
+	
+	public UserDto getUser(String id) {
+		return userInter.getReferenceById(id);
+	}
 }

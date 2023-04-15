@@ -12,11 +12,10 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <body>
-	<form action="login" method="post">
-		아이디: <input type="text" name="USER_id" size="5"><br>
-		비밀번호: <input type="text" name="USER_pass" size="5">
-		<button type="submit">로그인</button>
-	</form>
+	<div style="border: 1px solid red; width: 500px">
+	<b>일반회원 로그인</b>
+		<jsp:include page="user/user_login.jsp"></jsp:include>
+	</div>
 	<button onclick="location.href='join'">회원가입</button>
 	<br>
 	<br>

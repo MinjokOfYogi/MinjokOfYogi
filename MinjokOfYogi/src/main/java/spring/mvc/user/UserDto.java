@@ -21,25 +21,25 @@ import lombok.Setter;
 public class UserDto {
 	
 	@Id
-	@Column
-	private String USER_id;
+	@Column(name = "USER_id")
+	private String id;
 	
-	@Column
-	private String USER_pw;
+	@Column(name = "USER_pw")
+	private String pw;
 	
-	@Column
-	private String USER_hp;
+	@Column(name = "USER_hp")
+	private String hp;
 	
-	@Column
-	private String USER_addr;
+	@Column(name = "USER_addr")
+	private String addr;
 	
-	@Column
+	@Column(name = "USER_point")
 	@Builder.Default
-	private int USER_point=0;
+	private int point=0;
 	
-	@Column
+	@Column(name = "USER_level")
 	@Builder.Default
-	private String USER_level="아기돼지";
+	private String level="아기돼지";
 	
 	@Column
 	@Builder.Default

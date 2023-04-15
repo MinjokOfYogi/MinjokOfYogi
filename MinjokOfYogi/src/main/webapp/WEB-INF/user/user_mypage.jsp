@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+</head>
+<%
+String id = (String) session.getAttribute("id");
+%>
+<body>
+	<h1><%=id %>님의 마이페이지</h1>
+	<button type="button" onclick="location.href='/'">메인으로</button>
+</body>
+</html>

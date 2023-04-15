@@ -34,13 +34,13 @@
 			</caption>
 			<tr>
 				<th width="200">아이디</th>
-				<td><input type="text" style="width: 200px" name="USER_id"
+				<td><input type="text" style="width: 200px" name="id"
 					required="required"></td>
 			</tr>
 			<tr>
 				<th width="200">비밀번호</th>
 				<td><input type="password" style="width: 200px" id="pw"
-					name="USER_pw" required="required"></td>
+					name="pw" required="required"></td>
 			</tr>
 			<tr>
 				<th width="200">비밀번호 확인</th>
@@ -49,12 +49,12 @@
 			</tr>
 			<tr>
 				<th width="200">핸드폰 번호</th>
-				<td><input type="text" style="width: 200px" name="USER_hp"
+				<td><input type="text" style="width: 200px" name="hp"
 					required="required"></td>
 			</tr>
 			<tr>
 				<th width="200">주소</th>
-				<td><input type="text" style="width: 200px" name="USER_addr"
+				<td><input type="text" style="width: 200px" name="addr"
 					required="required"></td>
 			</tr>
 			<tr>
