@@ -1,15 +1,47 @@
 package spring.mvc.user;
 
-import lombok.Data;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Data
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "USER")
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserDto {
 	
+	@Id
+	@Column
 	private String USER_id;
+	
+	@Column
 	private String USER_pw;
+	
+	@Column
 	private String USER_hp;
+	
+	@Column
 	private String USER_addr;
-	private int USER_point;
-	private String USER_level;
-	private String login_type;
+	
+	@Column
+	@Builder.Default
+	private int USER_point=0;
+	
+	@Column
+	@Builder.Default
+	private String USER_level="아기돼지";
+	
+	@Column
+	@Builder.Default
+	private String login_type="user";
 }

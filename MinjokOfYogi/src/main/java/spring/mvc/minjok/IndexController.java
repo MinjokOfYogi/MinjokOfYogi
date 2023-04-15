@@ -11,5 +11,9 @@ public class IndexController {
 		return "index";
 	}
 	
+	@GetMapping("/join")
+	public String join() {
+		return "/join/join_register";
+	}
 
 }

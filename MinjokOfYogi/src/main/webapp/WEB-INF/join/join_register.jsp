@@ -12,6 +12,6 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <body>
-ggg
+<button type="button" onclick="location.href='/join/user'">일반 회원가입</button>
 </body>
 </html>

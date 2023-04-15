@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class UserController {
+	
 	@Autowired
 	UserDao dao;
 	
@@ -21,10 +22,5 @@ public class UserController {
 		dao.join_user(dto);
 		
 		return "redirect:/";
-	}
-	
-	@GetMapping("/join")
-	public String join() {
-		return "/join/join_register";
 	}
 }

@@ -1,0 +1,27 @@
+server:
+  port: 9005
+#jsp
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+  devtools:
+    livereload:
+      enabled: true
+#mysql
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://minjokofyogi.cb1pmlyvipyi.ap-northeast-2.rds.amazonaws.com:3306/MinjokOfYogi?serverTimezone=Asia/Seoul
+    username: King
+    password: king1226
+#Jpa
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    generate-ddl: true
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
