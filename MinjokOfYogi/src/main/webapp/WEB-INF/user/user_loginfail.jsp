@@ -12,6 +12,11 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <body>
-로그인 실패
+	<script type="text/javascript">
+		$(function() {
+			alert("로그인 실패");
+			location.href = "/";
+		})
+	</script>
 </body>
 </html>

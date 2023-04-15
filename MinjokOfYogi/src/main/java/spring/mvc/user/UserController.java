@@ -1,5 +1,7 @@
 package spring.mvc.user;
 
+import java.util.Optional;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,12 +33,16 @@ public class UserController {
 	@PostMapping("login")
 	public String login_user(@RequestParam String id, @RequestParam String pw, HttpSession session) {
 		UserDto dto = dao.getUser(id);
-		if (dto.getId().equals(id) && dto.getPw().equals(pw)) {
+
+		if (dto == null)
+			return "/user/user_loginfail";
+		else if (dto.getId().equals(id) && dto.getPw().equals(pw)) {
 			session.setAttribute("id", id);
 			return "/user/user_mypage";
+
 		} else {
 			return "/user/user_loginfail";
-		}
 
+		}
 	}
 }
