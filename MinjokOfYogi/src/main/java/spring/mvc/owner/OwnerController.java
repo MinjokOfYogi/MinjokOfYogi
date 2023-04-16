@@ -29,11 +29,17 @@ public class OwnerController {
 		dao.insertOwner(dto);
 		return "index";
 	}
+	
+	@GetMapping("addmenu")
+	public String menu() {
+		return "/owner/addmenu";
+	}
+	
 	@GetMapping("ownerlogin")
 	public String ownerlogin() {
 		return "/owner/owner_login";
 	}
-	@PostMapping("manage")
+	@GetMapping("manage")
 	public String manage() {
 		return "/owner/managepage";
 	}
@@ -43,25 +49,26 @@ public class OwnerController {
 		List<OwnerRegisterDto> list=dao.getAllDatas();
 		
 		model.addObject("list", list);
-		model.addObject("count", list.size());
-		model.setViewName("list");
+		model.addObject("rcount", list.size());
+		model.setViewName("managepage");
 		return model;
 	}
 	@PostMapping(value = "/login-check")
-	public String ownerLogin(@ModelAttribute OwnerRegisterDto dto) {
-		String loginok = dao.selectData(dto);
+	public ModelAndView ownerLogin(@ModelAttribute OwnerRegisterDto dto) {
+		ModelAndView model=new ModelAndView();
 		
-		if(loginok=="yes") {
-			return "/owner/managepage";
+		OwnerLoginDto loginDto = dao.selectData(dto);
+		if(loginDto.getLoginok().equals("yes")) {
+			model.addObject("ownerNumber", loginDto.getOwnId());
+			model.addObject("ownerName", loginDto.getOwnName());
+			model.setViewName("index");
+			return model;
 		}else {
-			return "/owner/owner_login";
-			
+			model.setViewName("/owner/owner_login");
+			return model;
 		}
 		//getDataById() 해서 객체에 넣고 아이디 비밀번호 같은지 확인
 		//확인 후 if else 문으로 return 반환
-		
-		
-		
 		
 	}
 	

@@ -16,7 +16,7 @@
 <div>
 <!-- 메뉴 카테고리는 가게의 카테고리를 따라가면 될듯 -->
 
-	<form action="addmenu" method="post">
+	<form action="add" method="post">
 		메뉴 이름
 		<input type="text">
 		<br>

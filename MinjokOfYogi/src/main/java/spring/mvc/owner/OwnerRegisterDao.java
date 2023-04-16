@@ -24,25 +24,34 @@ public class OwnerRegisterDao {
 	 * //ownerid로 데이터를 가져오기 }
 	 */
 	//select
-	public String selectData(OwnerRegisterDto dto) {
+	public OwnerLoginDto selectData(OwnerRegisterDto dto) {
 		//id랑 비밀번호 입력한거랑 db에 있는거랑 비교
 		//프론트에서 받아온 데이터 : dto
-		//db에서 가져올 데이터 : userData
+		//db에서 가져올 데이터 : ownerData
 		
-		OwnerRegisterDto userData = ownerInter.findByOwnOwnerid(dto.getOwnOwnerid());
-		if(userData==null) {
-			String loginok="no";
-			return loginok;
+		OwnerRegisterDto ownerData = ownerInter.findByOwnOwnerid(dto.getOwnOwnerid());
+		OwnerLoginDto failDto = new OwnerLoginDto();
+ 
+		if(ownerData==null) {
+			failDto.setLoginok("no");
+			return failDto;
 		}
 		
-		if(dto.getOwnOwnerid().equals(userData.getOwnOwnerid()) && dto.getOwnPass().equals(userData.getOwnPass())) {
-			String loginok="yes";
-			return loginok;
+		if(dto.getOwnOwnerid().equals(ownerData.getOwnOwnerid()) && dto.getOwnPass().equals(ownerData.getOwnPass())) {
+//			loginDto.setLoginok("yes");
+//			loginDto.setOwnId(userData.getOwnId());
+			OwnerLoginDto successDto = OwnerLoginDto.builder()
+					.loginok("yes")
+					.ownId(ownerData.getOwnId())
+					.ownName(ownerData.getOwnName())
+					.build();
+			return successDto;
 		}else {
-			String loginok="no";
-			return loginok;
+			failDto.setLoginok("no");
+			return failDto;
 		}
 //		System.out.println(userData);
 	}
+	
 }
 

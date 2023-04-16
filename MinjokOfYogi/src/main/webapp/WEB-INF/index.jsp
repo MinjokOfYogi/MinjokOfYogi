@@ -12,6 +12,13 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <body>
+	
+	<c:if test="${ownerName != null}">
+	[사장]${ownerName }님 접속중 -- ${ownerNumber }번
+	<button onclick="location.href='manage'">가게관리페이지</button>
+	<button onclick="location.href=#">로그아웃</button>
+	</c:if>
+	
 	<form action="login" method="post">
 		아이디: <input type="text" name="USER_id" size="5"><br>
 		비밀번호: <input type="text" name="USER_pass" size="5">
@@ -25,7 +32,7 @@
 
 	<!-- 권한은 나중에 -->
 	<button onclick="location.href='mypage'">마이페이지</button>
-	<button onclick="location.href='ownerlogin'">사장님페이지</button>
+	<button onclick="location.href='ownerlogin'">사장 로그인</button>
 	<button onclick="location.href='adminpage'">관리자페이지</button>
 	<br>
 

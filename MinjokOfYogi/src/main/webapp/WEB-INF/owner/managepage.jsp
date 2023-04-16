@@ -13,13 +13,14 @@
 </head>
 <body>
 	<a href="addRestaurant">입점신청</a><br>
-내 가게 수 : ${count }개<br>
+내 가게 수 : ${rcount }개<br>
+${list }
 가게목록
 <table>
 
 	<c:forEach var="dto" varStatus="i" items="${list }">
 		<tr>
-			<td><a href="detail?RST_id=${dto.RST_id }">${i.count }. ${dto.RST_name }</a></td>
+			
 			<!-- 클릭하면 해당 가게의 id에 해당하는 번호로 이동 -->
 		</tr>
 	</c:forEach>
