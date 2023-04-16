@@ -1,23 +1,28 @@
 package spring.mvc.owner;
 
+
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import spring.mvc.restaurant.RestaurantDaoInter;
+import spring.mvc.restaurant.RestaurantDto;
+
 
 @Controller
 public class OwnerController {
 
 	@Autowired
 	OwnerRegisterDao dao;
-	private HttpSession session;
 	
 	@GetMapping("ownerjoin")
 	public String form() {
@@ -38,20 +43,6 @@ public class OwnerController {
 	@GetMapping("ownerlogin")
 	public String ownerlogin() {
 		return "/owner/owner_login";
-	}
-	@GetMapping("manage")
-	public String manage() {
-		return "/owner/managepage";
-	}
-	@GetMapping("managelist")
-	public ModelAndView list() {
-		ModelAndView model=new ModelAndView();
-		List<OwnerRegisterDto> list=dao.getAllDatas();
-		
-		model.addObject("list", list);
-		model.addObject("rcount", list.size());
-		model.setViewName("managepage");
-		return model;
 	}
 	@PostMapping(value = "/login-check")
 	public ModelAndView ownerLogin(@ModelAttribute OwnerRegisterDto dto) {

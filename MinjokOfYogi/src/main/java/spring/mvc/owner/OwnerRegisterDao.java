@@ -39,7 +39,7 @@ public class OwnerRegisterDao {
 		
 		if(dto.getOwnOwnerid().equals(ownerData.getOwnOwnerid()) && dto.getOwnPass().equals(ownerData.getOwnPass())) {
 //			loginDto.setLoginok("yes");
-//			loginDto.setOwnId(userData.getOwnId());
+//			loginDto.setOwnId(ownerData.getOwnId());
 			OwnerLoginDto successDto = OwnerLoginDto.builder()
 					.loginok("yes")
 					.ownId(ownerData.getOwnId())

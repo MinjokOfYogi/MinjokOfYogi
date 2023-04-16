@@ -11,9 +11,26 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
+
 <body>
-	<a href="addRestaurant?num=${ownerNumber }">입점신청</a><br>
-가게수 : ${listCount }<br>
-가게목록 : 
+<form action="addRst" method="post">
+	주인번호
+	<input type="text" name="id" value="${num}">
+	가게이름
+	<input type="text" name="name">
+	가게전화번호
+	<input type="text" name="tel">
+	가게위치
+	<input type="text" name="location">
+	카테고리
+	<select name = "category">
+		<option value="1">한식</option>
+		<option value="2">중식</option>
+	</select>
+	라이선스
+	<input type="text" name="license">
+	
+	<button type="submit">저장</button>
+</form>
 </body>
 </html>

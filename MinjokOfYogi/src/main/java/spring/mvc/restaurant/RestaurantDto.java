@@ -1,4 +1,4 @@
-package spring.mvc.owner;
+package spring.mvc.restaurant;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,32 +9,42 @@ import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "OWNER")
+@Table(name = "RESTAURANT")
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class OwnerRegisterDto {
+public class RestaurantDto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "RST_id")
+	private long id;
+	
 	@Column(name = "OWN_id")
-	private long ownId;
-	@Column(name = "own_ownerid")
-	private String ownOwnerid;
-	@Column(name = "own_pass")
-	private String ownPass;
-	@Column(name = "own_name")
-	private String ownName;
-	@Column(name = "own_phone")
-	private String ownPhone;
-	@Column
-	@Builder.Default private String login_type = "owner";
+	private long ownerId;
+	
+	@Column(name = "RST_name")
+	private String name;
+	
+	@Column(name = "RST_tel")
+	private String tel;
+	
+	@Column(name = "RST_category")
+	private long category;
+	
+	@Column(name = "RST_location")
+	private String location;
+	
+	@Column(name = "RST_license")
+	private String license;
+	
+	@Column(name = "RST_auth")
+	private long auth;
 }

@@ -7,8 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan({"spring.mvc.test","spring.mvc.owner"})
-@EnableJpaRepositories({"spring.mvc.test","spring.mvc.owner"}) //dao인식
+@ComponentScan({"spring.mvc.*"})
+@EnableJpaRepositories({"spring.mvc.*"}) //dao인식
 @EntityScan({"spring.mvc.*"})
 public class MinjokOfYogiApplication {
 
