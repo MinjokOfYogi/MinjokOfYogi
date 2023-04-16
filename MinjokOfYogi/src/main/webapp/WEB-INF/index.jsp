@@ -11,17 +11,28 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
+<%
+String loginUser = (String) session.getAttribute("id");
+%>
 <body>
-	<div style="border: 1px solid red; width: 500px">
-	<b>일반회원 로그인</b>
-		<jsp:include page="user/user_login.jsp"></jsp:include>
-	</div>
-	<button onclick="location.href='join'">회원가입</button>
+	<c:if test="<%=loginUser != null%>">
+		<b><%=loginUser%>님 환영합니다.</b>
+		<button onclick="location.href='logout'">로그아웃</button><br>
+		<button onclick="location.href='cartList'">장바구니</button>
+		<button onclick="location.href='mypage'">마이페이지</button>
+	</c:if>
+	<c:if test="<%=loginUser == null%>">
+		<div style="border: 1px solid red; width: 500px">
+			<b>일반회원 로그인</b>
+			<jsp:include page="user/user_login.jsp"></jsp:include>
+		</div>
+		<button onclick="location.href='join'">회원가입</button>
+	</c:if>
 	<br>
 	<br>
 
 	<!-- 권한은 나중에 -->
-	<button onclick="location.href='mypage'">마이페이지</button>
+	
 	<button onclick="location.href='ownerpage'">사장님페이지</button>
 	<button onclick="location.href='adminpage'">관리자페이지</button>
 	<br>

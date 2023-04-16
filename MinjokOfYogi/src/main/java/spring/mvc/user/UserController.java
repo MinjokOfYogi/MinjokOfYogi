@@ -38,11 +38,54 @@ public class UserController {
 			return "/user/user_loginfail";
 		else if (dto.getId().equals(id) && dto.getPw().equals(pw)) {
 			session.setAttribute("id", id);
-			return "/user/user_mypage";
+			return "redirect:/";
 
 		} else {
 			return "/user/user_loginfail";
 
 		}
+	}
+	
+	@GetMapping("logout")
+	public String logout_user(HttpSession session) {
+		session.removeAttribute("id");
+		return "redirect:/";
+	}
+	
+	@GetMapping("mypage")
+	public ModelAndView myPage(HttpSession session) {
+		ModelAndView mview=new ModelAndView();
+		String id=(String)session.getAttribute("id");
+		
+		UserDto dto=dao.getUser(id);
+		mview.addObject("dto", dto);
+		
+		mview.setViewName("/user/user_mypage");
+		
+		return mview;
+	}
+	
+	@GetMapping("cartList")
+	public String cartList() {
+		
+		return "cart/cart_list";
+	}
+	
+	@GetMapping("pickList")
+	public String pickList() {
+		
+		return "pick/pick_list";
+	}
+	
+	@GetMapping("reviewList")
+	public String reviewList() {
+		
+		return "review/review_list";
+	}
+	
+	@GetMapping("orderList")
+	public String orderList() {
+		
+		return "order/order_list";
 	}
 }
