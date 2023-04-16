@@ -65,23 +65,5 @@ public class UserController {
 		return mview;
 	}
 	
-	@GetMapping("cartList")
-	public String cartList() {
-		
-		return "cart/cart_list";
-	}
-	
-	@GetMapping("pickList")
-	public String pickList() {
-		
-		return "pick/pick_list";
-	}
-	
 
-	
-	@GetMapping("orderList")
-	public String orderList() {
-		
-		return "orders/orders_list";
-	}
 }
