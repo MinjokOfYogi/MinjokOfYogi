@@ -77,15 +77,11 @@ public class UserController {
 		return "pick/pick_list";
 	}
 	
-	@GetMapping("reviewList")
-	public String reviewList() {
-		
-		return "review/review_list";
-	}
+
 	
 	@GetMapping("orderList")
 	public String orderList() {
 		
-		return "order/order_list";
+		return "orders/orders_list";
 	}
 }
