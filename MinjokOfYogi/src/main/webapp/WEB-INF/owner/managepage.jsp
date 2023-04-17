@@ -14,6 +14,9 @@
 <body>
 	<a href="addRestaurant?num=${ownerNumber }">입점신청</a><br>
 가게수 : ${listCount }<br>
-가게목록 : 
+가게목록<br>
+<c:forEach var="i" items="${list }">
+	${i.name }<br>
+</c:forEach>
 </body>
 </html>
