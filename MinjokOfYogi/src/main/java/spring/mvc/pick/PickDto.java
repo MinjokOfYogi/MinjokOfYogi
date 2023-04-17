@@ -38,7 +38,7 @@ public class PickDto {
 	
 	@ManyToOne
 	@JoinColumn(name = "USER_id")
-	private UserDto id;
+	private UserDto uid;
 	
 	@ManyToOne
 	@JoinColumn(name = "RST_id")
