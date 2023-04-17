@@ -2,6 +2,7 @@ package spring.mvc.menu;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -19,6 +20,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class MenuDto {
 
+	@Id
 	@Column(name = "MENU_id")
 	private long mId;
 	
