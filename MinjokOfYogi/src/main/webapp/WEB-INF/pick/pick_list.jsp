@@ -15,8 +15,21 @@
 String id = (String) session.getAttribute("id");
 %>
 <body>
-<h1>${id }님의 가게찜리스트</h1>
+	<h1>${id }님의가게찜리스트</h1>
+	<h2>${count }</h2>
+	<table class="table table-bordered">
+		<tr>
+			<th>번호</th>
+			<th>가게이름</th>
+		</tr>
+		<c:forEach var="dto" items="${list }" varStatus="i">
+		<tr>
+			<td>${i.count }</td>
+			<td>${dto.rid.getRname() }</td>
+			</tr>
+		</c:forEach>
+	</table>
 
-<button type="button" onclick="history.back()">뒤로가기</button>
+	<button type="button" onclick="history.back()">뒤로가기</button>
 </body>
 </html>

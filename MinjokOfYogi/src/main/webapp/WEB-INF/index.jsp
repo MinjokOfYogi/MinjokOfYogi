@@ -12,7 +12,7 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <%
-String loginUser = (String) session.getAttribute("id");
+String loginUser = (String) session.getAttribute("uid");
 %>
 <body>
 
@@ -36,14 +36,6 @@ String loginUser = (String) session.getAttribute("id");
 	<button onclick="location.href=#">로그아웃</button>
 	</c:if>
 	
-	<c:if test="${ownerName == null }">
-	<form action="login" method="post">
-		아이디: <input type="text" name="USER_id" size="5"><br>
-		비밀번호: <input type="text" name="USER_pass" size="5">
-		<button type="submit">로그인</button>
-	</form>
-	
-	<button onclick="location.href='join'">회원가입</button>
 	<button onclick="location.href='ownerjoin'">사장회원가입</button>
 	<br>
 	<br>
@@ -60,6 +52,6 @@ String loginUser = (String) session.getAttribute("id");
 	<button type="button" onclick="location.href='#'">분식</button>
 	<button type="button" onclick="location.href='#'">피자/치킨</button>
 	<button type="button" onclick="location.href='#'">디저트</button>
-	</c:if>
+	
 </body>
 </html>

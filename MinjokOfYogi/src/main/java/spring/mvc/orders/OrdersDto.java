@@ -1,6 +1,7 @@
 package spring.mvc.orders;
 
 import java.sql.Timestamp;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,6 +21,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import spring.mvc.cart.CartDto;
+import spring.mvc.user.UserDto;
 
 @Entity
 @Table(name = "ORDERS")
@@ -37,11 +39,11 @@ public class OrdersDto {
 	
 	@ManyToOne
 	@JoinColumn(name = "USER_id")
-	private String id;
+	private UserDto id;
 	
 	@OneToMany
 	@JoinColumn(name = "CART_id")
-	private long cId;
+	private Set<CartDto> cId;
 	
 	@Column(name = "ORD_method")
 	private String method;

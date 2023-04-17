@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -16,6 +17,9 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
+import spring.mvc.restaurant.RestaurantDto;
+import spring.mvc.user.UserDto;
 
 @Entity
 @Table(name = "PICK")
@@ -24,6 +28,7 @@ import lombok.Setter;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class PickDto {
 	
 	@Id
@@ -31,12 +36,12 @@ public class PickDto {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long pId;
 	
-	@ManyToMany
+	@ManyToOne
 	@JoinColumn(name = "USER_id")
-	private String id;
+	private UserDto id;
 	
-	@ManyToMany
+	@ManyToOne
 	@JoinColumn(name = "RST_id")
-	private long rId;
+	private RestaurantDto rid;
 
 }

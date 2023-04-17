@@ -15,6 +15,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import spring.mvc.orders.OrdersDto;
+import spring.mvc.user.UserDto;
 
 @Setter
 @Getter
@@ -30,13 +32,13 @@ public class ReviewDto {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long rId;
 
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "ORD_id")
-	private long oId;
+	private OrdersDto oId;
 
 	@ManyToOne
 	@JoinColumn(name = "USER_id")
-	private String id;
+	private UserDto id;
 
 	@Column(name = "REV_stars")
 	@Builder.Default

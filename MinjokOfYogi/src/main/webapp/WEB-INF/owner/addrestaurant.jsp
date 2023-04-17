@@ -15,13 +15,13 @@
 <body>
 	<form action="addRst" method="post">
 		주인번호 <input type="text" name="ownerId" value="${num}"><br>
-		가게이름 <input type="text" name="name"><br> 가게전화번호 <input
-			type="text" name="tel"><br> 가게위치 <input type="text"
-			name="location"><br> 카테고리 <select name="category">
+		가게이름 <input type="text" name="rname"><br> 가게전화번호 <input
+			type="text" name="rtel"><br> 가게위치 <input type="text"
+			name="rlocation"><br> 카테고리 <select name="rcategory">
 			<option value="1">한식</option>
 			<option value="2">중식</option>
-		</select><br> 라이선스 <input type="text" name="license"><br> 권한
-		<input type="text" name="auth"><br>
+		</select><br> 라이선스 <input type="text" name="rlicense"><br> 권한
+		<input type="text" name="rauth"><br>
 		<button type="submit">저장</button>
 	</form>
 </body>

@@ -13,8 +13,8 @@
 </head>
 <body>
 	<form action="login" method="post" class="form-inline">
-		아이디: <input type="text" name="id" size="5" class="form-control"
-			required="required"> 비밀번호: <input type="password" name="pw"
+		아이디: <input type="text" name="uid" size="5" class="form-control"
+			required="required"> 비밀번호: <input type="password" name="upw"
 			size="5" class="form-control" required="required">
 		<button type="submit">로그인</button>
 	</form>

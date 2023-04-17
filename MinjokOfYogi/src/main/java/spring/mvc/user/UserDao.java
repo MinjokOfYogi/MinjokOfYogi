@@ -13,7 +13,7 @@ public class UserDao {
 		userInter.save(dto);
 	}
 
-	public UserDto getUser(String id) {
-		return userInter.findById(id).orElse(null);
+	public UserDto getUser(String uid) {
+		return userInter.findById(uid).orElse(null);
 	}
 }

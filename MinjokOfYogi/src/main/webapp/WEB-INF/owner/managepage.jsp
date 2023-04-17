@@ -16,7 +16,7 @@
 가게수 : ${listCount }<br>
 가게목록<br>
 <c:forEach var="i" items="${list }">
-	${i.name }<br>
+	${i.rname }<br>
 </c:forEach>
 </body>
 </html>

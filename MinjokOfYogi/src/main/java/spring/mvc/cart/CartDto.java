@@ -7,8 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -16,6 +14,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import spring.mvc.menu.MenuDto;
+import spring.mvc.user.UserDto;
 
 @Entity
 @Table(name = "CART")
@@ -33,11 +33,11 @@ public class CartDto {
 	
 	@ManyToOne
 	@JoinColumn(name = "USER_id")
-	private String id;
+	private UserDto id;
 	
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "MENU_id")
-	private long mId;
+	private MenuDto mId;
 
 
 	

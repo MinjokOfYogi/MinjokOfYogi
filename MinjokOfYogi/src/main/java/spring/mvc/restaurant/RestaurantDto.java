@@ -12,6 +12,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "RESTAURANT")
@@ -20,31 +21,32 @@ import lombok.Setter;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class RestaurantDto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "RST_id")
-	private long id;
+	private long rid;
 	
 	@Column(name = "OWN_id")
 	private long ownerId;
 	
 	@Column(name = "RST_name")
-	private String name;
+	private String rname;
 	
 	@Column(name = "RST_tel")
-	private String tel;
+	private String rtel;
 	
 	@Column(name = "RST_category")
-	private long category;
+	private long rcategory;
 	
 	@Column(name = "RST_location")
-	private String location;
+	private String rlocation;
 	
 	@Column(name = "RST_license")
-	private String license;
+	private String rlicense;
 	
 	@Column(name = "RST_auth")
-	private long auth;
+	private long rauth;
 }

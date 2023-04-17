@@ -12,34 +12,34 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <%
-String id = (String) session.getAttribute("id");
+String uid = (String) session.getAttribute("uid");
 %>
 <body>
-	<h1><%=id%>님의 마이페이지
+	<h1><%=uid%>님의 마이페이지
 	</h1>
 	<table class="table table-bordered" style="width: 500px">
 		<tr>
 			<th>아이디</th>
-			<td>${dto.id }</td>
+			<td>${dto.uid }</td>
 		</tr>
 		<tr>
 			<th>전화번호</th>
-			<td>${dto.hp }</td>
+			<td>${dto.uhp }</td>
 		</tr>
 		<tr>
 			<th>주소</th>
-			<td>${dto.addr }</td>
+			<td>${dto.uaddr }</td>
 		</tr>
 		<tr>
 			<th>포인트</th>
-			<td>${dto.point }점</td>
+			<td>${dto.upoint }점</td>
 		</tr>
 		<tr>
 			<th>레벨</th>
-			<td>${dto.level }</td>
+			<td>${dto.ulevel }</td>
 		</tr>
 	</table>
-	<button type="button" onclick="location.href='pickList'">찜목록</button>
+	<button type="button" onclick="location.href='pickList?uid=${dto.uid}'">찜목록</button>
 	<button type="button" onclick="location.href='reviewList'">리뷰목록</button>
 	<button type="button" onclick="location.href='orderList'">주문목록</button>
 	<br>
