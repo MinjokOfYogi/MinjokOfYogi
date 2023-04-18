@@ -34,7 +34,7 @@ public class PickDto {
 	@Id
 	@Column(name = "PICK_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long pId;
+	private long pid;
 	
 	@ManyToOne
 	@JoinColumn(name = "USER_id")

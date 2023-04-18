@@ -12,10 +12,10 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <%
-String uid = (String) session.getAttribute("uid");
+String loginUser = (String) session.getAttribute("loginUser");
 %>
 <body>
-	<h1><%=uid%>님의 마이페이지
+	<h1><%=loginUser%>님의 마이페이지
 	</h1>
 	<table class="table table-bordered" style="width: 500px">
 		<tr>

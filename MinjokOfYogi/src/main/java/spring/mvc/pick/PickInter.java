@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PickInter extends JpaRepository<PickDto, Long>{
 
-	List<PickDto> findAllById(String uid);
+	//List<PickDto> findAllByUid(String uid);
 	
 
 }

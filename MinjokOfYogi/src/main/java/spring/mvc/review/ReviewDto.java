@@ -30,15 +30,15 @@ public class ReviewDto {
 	@Id
 	@Column(name = "REV_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long rId;
+	private long rid;
 
 	@ManyToOne
 	@JoinColumn(name = "ORD_id")
-	private OrdersDto oId;
+	private OrdersDto oid;
 
 	@ManyToOne
 	@JoinColumn(name = "USER_id")
-	private UserDto id;
+	private UserDto uid;
 
 	@Column(name = "REV_stars")
 	@Builder.Default

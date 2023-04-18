@@ -13,6 +13,6 @@ public class PickDao {
 	PickInter pickInter;
 	
 	public List<PickDto> getPicksById(@RequestParam String uid) {
-		return pickInter.findAllByUid(uid);
+		return pickInter.findAll();
 	};
 }

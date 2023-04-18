@@ -12,7 +12,7 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <%
-String id = (String) session.getAttribute("id");
+String loginUser = (String) session.getAttribute("loginUser");
 %>
 <body>
 	<h1>${id }님의가게찜리스트</h1>
