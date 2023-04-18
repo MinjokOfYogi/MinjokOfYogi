@@ -13,6 +13,7 @@
 </head>
 <%
 String loginUser = (String) session.getAttribute("loginUser");
+String ownerName = (String) session.getAttribute("ownerName");
 %>
 <body>
 

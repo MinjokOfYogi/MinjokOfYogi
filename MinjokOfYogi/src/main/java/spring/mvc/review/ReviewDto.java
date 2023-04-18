@@ -42,12 +42,12 @@ public class ReviewDto {
 
 	@Column(name = "REV_stars")
 	@Builder.Default
-	private int stars = 0;
+	private int rstars = 0;
 
 	@Column(name = "REV_content")
-	private String content;
+	private String rcontent;
 
 	@Column(name = "REV_photo")
-	private String photo;
+	private String rphoto;
 
 }

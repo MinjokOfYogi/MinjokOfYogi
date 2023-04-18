@@ -16,4 +16,10 @@ public class ReviewController {
 		return "review/review_list";
 	}
 	
+	@GetMapping("insertReview")
+	public String insertReview() {
+		
+		return "review/review_insertForm";
+	}
+	
 }
