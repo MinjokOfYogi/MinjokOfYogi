@@ -12,6 +12,25 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <body>
-회원가입할래
+메뉴 등록
+<div>
+<!-- 메뉴 카테고리는 가게의 카테고리를 따라가면 될듯 -->
+
+	<form action="add" method="post">
+		메뉴 이름
+		<input type="text">
+		<br>
+		
+		메뉴 사진 등록
+		<input type="file">
+		<br>
+	
+		메뉴 가격 등록
+		<input type="text">
+		<br>
+		
+		<button type="submit">저장</button>
+	</form>
+</div>
 </body>
 </html>

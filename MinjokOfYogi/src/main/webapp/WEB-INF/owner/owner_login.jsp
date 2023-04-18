@@ -12,20 +12,10 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <body>
-<div><h1>사장회원가입</h1>
-
-<form action="addDB" method="post">
-	이름
-	<input type="text" name="ownName">
-	아이디
-	<input type="text" name="ownOwnerid">
-	비밀번호
-	<input type="password" name="ownPass">
-	전화번호
-	<input type="text" name="ownPhone">
-	
-	<button type="submit">가입</button>
-</form>
-</div>
+	<form action="login-check" method="post">
+		사장아이디: <input type="text" name="ownOwnerid" size="5"><br>
+		사장비밀번호: <input type="text" name="ownPass" size="5">
+		<button type="submit">로그인</button>
+	</form>
 </body>
 </html>

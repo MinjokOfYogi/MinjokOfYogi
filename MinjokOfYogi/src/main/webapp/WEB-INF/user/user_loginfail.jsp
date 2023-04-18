@@ -12,20 +12,11 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <body>
-<div><h1>사장회원가입</h1>
-
-<form action="addDB" method="post">
-	이름
-	<input type="text" name="ownName">
-	아이디
-	<input type="text" name="ownOwnerid">
-	비밀번호
-	<input type="password" name="ownPass">
-	전화번호
-	<input type="text" name="ownPhone">
-	
-	<button type="submit">가입</button>
-</form>
-</div>
+	<script type="text/javascript">
+		$(function() {
+			alert("로그인 실패");
+			location.href = "/";
+		})
+	</script>
 </body>
 </html>

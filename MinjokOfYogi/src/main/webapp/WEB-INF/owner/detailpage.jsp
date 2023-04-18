@@ -12,20 +12,17 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <body>
-<div><h1>사장회원가입</h1>
-
-<form action="addDB" method="post">
-	이름
-	<input type="text" name="ownName">
-	아이디
-	<input type="text" name="ownOwnerid">
-	비밀번호
-	<input type="password" name="ownPass">
-	전화번호
-	<input type="text" name="ownPhone">
+	<div>
+		가게이름 : ${dto.RST_name }<br>
+		
+		영업중 : MNG_state가져오기
+		
+		영업시간 : MNG_time 가져오기
+		
+		<a href="menu?RST_id=${dto.RST_id }">메뉴 등록</a>
+		
+		<a>주문 확인</a>
 	
-	<button type="submit">가입</button>
-</form>
-</div>
+	</div>
 </body>
 </html>
