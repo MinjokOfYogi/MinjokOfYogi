@@ -10,18 +10,8 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
-
-<style type="text/css">
-
-	#nav{
-		height:100px;
-	}
-
-</style>
-
 </head>
 <body>
-
 	<form action="login" method="post">
 		아이디: <input type="text" name="USER_id" size="5"><br>
 		비밀번호: <input type="text" name="USER_pass" size="5">
