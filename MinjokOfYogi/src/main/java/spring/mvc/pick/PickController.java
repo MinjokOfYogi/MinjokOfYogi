@@ -15,11 +15,11 @@ public class PickController {
 	PickDao dao;
 	
 	@GetMapping("pickList")
-	public ModelAndView pickList(@RequestParam String uid) {
+	public ModelAndView pickList(@RequestParam String loginUser) {
 		ModelAndView mview=new ModelAndView();
 		
-		mview.addObject("count", dao.getPicksById(uid).size());
-		mview.addObject("list", dao.getPicksById(uid));
+		mview.addObject("count", dao.getPicksById(loginUser).size());
+		mview.addObject("list", dao.getPicksById(loginUser));
 		
 		mview.setViewName("pick/pick_list");
 		
