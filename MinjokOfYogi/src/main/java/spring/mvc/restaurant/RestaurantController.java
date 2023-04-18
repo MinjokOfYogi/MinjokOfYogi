@@ -52,4 +52,16 @@ public class RestaurantController {
 		return "/owner/managepage";
 	}
 	
+	//rst list
+	@GetMapping("/list")
+	public ModelAndView list() {
+		
+		ModelAndView model=new ModelAndView();
+		List<RestaurantDto> list=dao.getList();
+		model.addObject("list", list);
+		
+		model.setViewName("owner/rst_list");
+		return model;
+	}
+	
 }

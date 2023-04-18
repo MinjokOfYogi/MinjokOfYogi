@@ -46,12 +46,7 @@ String loginUser = (String) session.getAttribute("uid");
 	<br>
 
 	<h1>메뉴 카테고리</h1>
-	<button type="button" onclick="location.href='#'">한식</button>
-	<button type="button" onclick="location.href='#'">중식</button>
-	<button type="button" onclick="location.href='#'">양식</button>
-	<button type="button" onclick="location.href='#'">분식</button>
-	<button type="button" onclick="location.href='#'">피자/치킨</button>
-	<button type="button" onclick="location.href='#'">디저트</button>
+	<button type="button" onclick="location.href='list'">식당바로가기</button>
 	
 </body>
 </html>
