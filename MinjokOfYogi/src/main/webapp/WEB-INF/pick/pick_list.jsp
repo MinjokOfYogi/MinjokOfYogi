@@ -12,19 +12,21 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <%
-String id = (String) session.getAttribute("id");
+String loginUser = (String) session.getAttribute("loginUser");
 %>
 <body>
-	<h1>${id }님의가게찜리스트</h1>
+	<h1>${loginUser }님의가게찜리스트</h1>
 	<h2>${count }</h2>
 	<table class="table table-bordered">
 		<tr>
 			<th>번호</th>
+			<th>유저이름</th>
 			<th>가게이름</th>
 		</tr>
 		<c:forEach var="dto" items="${list }" varStatus="i">
 		<tr>
 			<td>${i.count }</td>
+			<td>${dto.uid.getUid() }</td>
 			<td>${dto.rid.getRname() }</td>
 			</tr>
 		</c:forEach>

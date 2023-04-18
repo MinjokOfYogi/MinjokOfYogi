@@ -12,10 +12,10 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <%
-String id = (String) session.getAttribute("id");
+String loginUser = (String) session.getAttribute("loginUser");
 %>
 <body>
-<h1>${id }님의 장바구니</h1>
+<h1>${loginUser }님의 장바구니</h1>
 
 <button type="button" onclick="history.back()">뒤로가기</button>
 </body>

@@ -29,15 +29,15 @@ public class CartDto {
 	@Id
 	@Column(name = "CART_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long cId;
+	private long cid;
 	
 	@ManyToOne
 	@JoinColumn(name = "USER_id")
-	private UserDto id;
+	private UserDto uid;
 	
 	@ManyToOne
 	@JoinColumn(name = "MENU_id")
-	private MenuDto mId;
+	private MenuDto mid;
 
 
 	

@@ -12,7 +12,8 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <%
-String loginUser = (String) session.getAttribute("uid");
+String loginUser = (String) session.getAttribute("loginUser");
+String ownerName = (String) session.getAttribute("ownerName");
 %>
 <body>
 

@@ -12,10 +12,10 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <%
-String uid = (String) session.getAttribute("uid");
+String loginUser = (String) session.getAttribute("loginUser");
 %>
 <body>
-	<h1><%=uid%>님의 마이페이지
+	<h1><%=loginUser%>님의 마이페이지
 	</h1>
 	<table class="table table-bordered" style="width: 500px">
 		<tr>
@@ -39,7 +39,7 @@ String uid = (String) session.getAttribute("uid");
 			<td>${dto.ulevel }</td>
 		</tr>
 	</table>
-	<button type="button" onclick="location.href='pickList?uid=${dto.uid}'">찜목록</button>
+	<button type="button" onclick="location.href='pickList?loginUser=${loginUser}'">찜목록</button>
 	<button type="button" onclick="location.href='reviewList'">리뷰목록</button>
 	<button type="button" onclick="location.href='orderList'">주문목록</button>
 	<br>

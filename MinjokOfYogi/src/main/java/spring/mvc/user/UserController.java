@@ -35,7 +35,7 @@ public class UserController {
 		if (dto == null)
 			return "/user/user_loginfail";
 		else if (dto.getUid().equals(uid) && dto.getUpw().equals(upw)) {
-			session.setAttribute("uid", uid);
+			session.setAttribute("loginUser", uid);
 			return "redirect:/";
 
 		} else {
@@ -46,16 +46,16 @@ public class UserController {
 	
 	@GetMapping("logout")
 	public String logout_user(HttpSession session) {
-		session.removeAttribute("uid");
+		session.removeAttribute("loginUser");
 		return "redirect:/";
 	}
 	
 	@GetMapping("mypage")
 	public ModelAndView myPage(HttpSession session) {
 		ModelAndView mview=new ModelAndView();
-		String uid=(String)session.getAttribute("uid");
+		String loginUser=(String)session.getAttribute("loginUser");
 		
-		UserDto dto=dao.getUser(uid);
+		UserDto dto=dao.getUser(loginUser);
 		mview.addObject("dto", dto);
 		
 		mview.setViewName("/user/user_mypage");
