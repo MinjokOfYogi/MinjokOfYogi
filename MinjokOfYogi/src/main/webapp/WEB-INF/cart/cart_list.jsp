@@ -11,11 +11,6 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
-<%
-String id = (String) session.getAttribute("id");
-%>
-<body>
-<h1>${id }님의 장바구니</h1>
 
 <button type="button" onclick="history.back()">뒤로가기</button>
 </body>
