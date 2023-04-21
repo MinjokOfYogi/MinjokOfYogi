@@ -20,6 +20,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import spring.mvc.cart.CartDto;
 import spring.mvc.user.UserDto;
 
@@ -30,6 +31,7 @@ import spring.mvc.user.UserDto;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class OrdersDto {
 	
 	@Id

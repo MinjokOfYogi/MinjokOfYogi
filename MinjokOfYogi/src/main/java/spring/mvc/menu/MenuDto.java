@@ -12,6 +12,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "MENU")
@@ -20,6 +21,7 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class MenuDto {
 
 	@Id
@@ -43,5 +45,5 @@ public class MenuDto {
 	private String mdesc;
 	
 	@Column(name = "MENU_category")
-	private int mcategory;
+	private String mcategory;
 }
