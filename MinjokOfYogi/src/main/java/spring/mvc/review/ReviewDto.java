@@ -15,6 +15,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import spring.mvc.orders.OrdersDto;
 import spring.mvc.user.UserDto;
 
@@ -25,6 +26,7 @@ import spring.mvc.user.UserDto;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class ReviewDto {
 
 	@Id
@@ -33,11 +35,11 @@ public class ReviewDto {
 	private long rid;
 
 	@ManyToOne
-	@JoinColumn(name = "ORD_id")
+	@JoinColumn(name = "ORD_id", referencedColumnName = "ORD_id")
 	private OrdersDto oid;
 
 	@ManyToOne
-	@JoinColumn(name = "USER_id")
+	@JoinColumn(name = "USER_id", referencedColumnName = "USER_id")
 	private UserDto uid;
 
 	@Column(name = "REV_stars")
