@@ -37,13 +37,13 @@ public class CartDto {
 	@Column(name = "CART_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long cid;
-	
+
 	@ManyToOne
-	@JoinColumn(name = "USER_id")
+	@JoinColumn(name = "USER_id", referencedColumnName = "USER_id")
 	private UserDto uid;
-	
+
 	@ManyToOne
-	@JoinColumn(name = "MENU_id")
+	@JoinColumn(name = "MENU_id", referencedColumnName = "MENU_id")
 	private MenuDto mid;
 
 }

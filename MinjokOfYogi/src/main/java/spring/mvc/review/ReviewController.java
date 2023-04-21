@@ -3,6 +3,7 @@ package spring.mvc.review;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ReviewController {
@@ -11,9 +12,14 @@ public class ReviewController {
 	ReviewDao dao;
 
 	@GetMapping("reviewList")
-	public String reviewList() {
+	public ModelAndView reviewList() {
+		ModelAndView mview=new ModelAndView();
 		
-		return "review/review_list";
+		mview.addObject("list", dao.getAllReviews());
+		
+		mview.setViewName("review/review_list");
+		
+		return mview;
 	}
 	
 	@GetMapping("insertReview")

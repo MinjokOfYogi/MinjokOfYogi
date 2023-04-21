@@ -22,16 +22,22 @@ String loginUser = (String) session.getAttribute("loginUser");
 			<th>리뷰번호</th>
 			<th>주문번호</th>
 			<th>메뉴명</th>
-			<th>주문자명</th>
+			<th>주문자 아이디</th>
 			<th>별점</th>
 			<th>리뷰내용</th>
 			<th>사진</th>
 		</tr>
-		<%-- <c:forEach>
+		<c:forEach var="dto" items="${list }" varStatus="i">
 			<tr>
-
+				<td>${dto.rid }</td>
+				<td>${dto.oid.getOid() }</td>
+				<td>${dto.oid.getCid().iterator().next().getMid().getMname() }</td>
+				<td>${dto.uid.getUid() }</td>
+				<td>${dto.rstars }</td>
+				<td>${dto.rcontent }</td>
+				<td>${dto.rphoto }</td>
 			</tr>
-		</c:forEach> --%>
+		</c:forEach>
 	</table>
 	<button type="button" onclick="history.back()">뒤로가기</button>
 </body>
