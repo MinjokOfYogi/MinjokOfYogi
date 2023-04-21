@@ -34,11 +34,11 @@ public class PickDto {
 	@Id
 	@Column(name = "PICK_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long pId;
+	private long pid;
 	
 	@ManyToOne
 	@JoinColumn(name = "USER_id")
-	private UserDto id;
+	private UserDto uid;
 	
 	@ManyToOne
 	@JoinColumn(name = "RST_id")

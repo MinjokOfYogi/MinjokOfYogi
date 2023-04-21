@@ -40,10 +40,10 @@ public class CartDto {
 	
 	@ManyToOne
 	@JoinColumn(name = "USER_id")
-	private UserDto id;
+	private UserDto uid;
 	
 	@ManyToOne
 	@JoinColumn(name = "MENU_id")
-	private MenuDto mId;
+	private MenuDto mid;
 
 }

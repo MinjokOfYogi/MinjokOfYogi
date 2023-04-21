@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public abstract class ReviewController {
+public class ReviewController {
 	
 	@Autowired
 	ReviewDao dao;
@@ -14,6 +14,12 @@ public abstract class ReviewController {
 	public String reviewList() {
 		
 		return "review/review_list";
+	}
+	
+	@GetMapping("insertReview")
+	public String insertReview() {
+		
+		return "review/review_insertForm";
 	}
 	
 }

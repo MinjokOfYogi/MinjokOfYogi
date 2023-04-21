@@ -25,23 +25,23 @@ public class MenuDto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "MENU_id")
-	private long mId;
+	private long mid;
 	
 	@Column(name = "RST_id")
-	private long rId;
+	private long rid;
 	
 	@Column(name = "MENU_name")
-	private String mName;
+	private String mname;
 	
 	@Column(name = "MENU_price")
-	private int mPrice;
+	private int mprice;
 	
 	@Column(name = "MENU_photo")
-	private String mPhoto;
+	private String mphoto;
 	
 	@Column(name = "MENU_desc")
-	private String mDesc;
+	private String mdesc;
 	
 	@Column(name = "MENU_category")
-	private int mCategory;
+	private int mcategory;
 }

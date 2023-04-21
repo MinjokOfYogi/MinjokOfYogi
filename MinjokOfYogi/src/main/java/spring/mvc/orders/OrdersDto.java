@@ -35,15 +35,15 @@ public class OrdersDto {
 	@Id
 	@Column(name = "ORD_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long oId;
+	private long oid;
 	
 	@ManyToOne
 	@JoinColumn(name = "USER_id")
-	private UserDto id;
+	private UserDto uid;
 	
 	@OneToMany
 	@JoinColumn(name = "CART_id")
-	private Set<CartDto> cId;
+	private Set<CartDto> cid;
 	
 	@Column(name = "ORD_method")
 	private String method;
@@ -56,9 +56,9 @@ public class OrdersDto {
 	
 	@CreationTimestamp
 	@Column(name = "ORD_day", updatable = false)
-	private Timestamp oDay;
+	private Timestamp oday;
 	
 	@Column(name = "ORD_status")
-	private String oStatus;
+	private String ostatus;
 
 }
