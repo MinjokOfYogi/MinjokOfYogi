@@ -27,6 +27,7 @@ String loginUser = (String) session.getAttribute("loginUser");
 			<th>결제방식</th>
 			<th>주문날짜</th>
 			<th>주문상태</th>
+			<th>비고</th>
 		</tr>
 		<c:forEach var="dto" items="${olist }" varStatus="i">
 			<tr>
@@ -38,6 +39,7 @@ String loginUser = (String) session.getAttribute("loginUser");
 				<td>${dto.opayment }</td>
 				<td>${dto.oday }</td>
 				<td>${dto.ostatus }</td>
+				<td><button type="button" onclick="location.herf='#'">리뷰쓰기</button></td>
 			</tr>
 		</c:forEach>
 	</table>
