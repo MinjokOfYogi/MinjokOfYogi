@@ -45,7 +45,7 @@ public class OrdersDto {
 	private UserDto uid;
 	
 	@OneToMany
-	@JoinColumn(name = "CART_id")
+	@JoinColumn(name = "CART_id", insertable = false, updatable = false)
 	private Set<CartDto> cid;
 	
 	@Column(name = "ORD_method")

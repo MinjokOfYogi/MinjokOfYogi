@@ -25,5 +25,4 @@ public class OrdersDao {
 	public void deleteOrder(long oid) {
 		ordersInter.deleteById(oid);
 	}
-	
 }
