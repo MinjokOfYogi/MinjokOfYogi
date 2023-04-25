@@ -26,6 +26,7 @@ String loginUser = (String) session.getAttribute("loginUser");
 			<th>별점</th>
 			<th>리뷰내용</th>
 			<th>사진</th>
+			<th>편집</th>
 		</tr>
 		<c:forEach var="dto" items="${list }" varStatus="i">
 			<tr>
@@ -36,6 +37,10 @@ String loginUser = (String) session.getAttribute("loginUser");
 				<td>${dto.rstars }</td>
 				<td>${dto.rcontent }</td>
 				<td>${dto.rphoto }</td>
+				<td>
+					<button type="button" onclick="location.href='getReview?rid=${dto.rid}'">수정</button>
+					<button type="button" onclick="location.href='deleteReview?rid=${dto.rid}'">삭제</button>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>
