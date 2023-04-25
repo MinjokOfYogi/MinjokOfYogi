@@ -33,9 +33,9 @@ String loginUser = (String) session.getAttribute("loginUser");
 				<td>${dto.oid }</td>
 				<td>${dto.uid.getUid()}</td>
 				<td>${dto.getCid().iterator().next().getMid().getMname()}</td>
-				<td>${dto.method }</td>
-				<td>${dto.request }</td>
-				<td>${dto.payment }</td>
+				<td>${dto.omethod }</td>
+				<td>${dto.orequest }</td>
+				<td>${dto.opayment }</td>
 				<td>${dto.oday }</td>
 				<td>${dto.ostatus }</td>
 			</tr>
