@@ -13,12 +13,18 @@
 </head>
 <body>
 	<form action="updateReview" method="post">
-	<input type="hidden" value="${dto.rid }" name="rid">
+		<input type="hidden" value="${dto.rid }" name="rid"> <input
+			type="hidden" value="${dto.oid.getOid() }" name="oid"> <input
+			type="hidden" value="${dto.uid.getUid() }" name="uid">
 		<table class="table table-bordered" style="width: 500px">
 			<tr>
 				<th>별점</th>
 				<td><input type="text" pattern="^[1-5]+$"
 					value="${dto.rstars }" name="rstars"></td>
+			</tr>
+			<tr>
+				<th>사진</th>
+				<td><input type="text" name="rphoto" value="${dto.rphoto }"></td>
 			</tr>
 			<tr>
 				<th>내용</th>

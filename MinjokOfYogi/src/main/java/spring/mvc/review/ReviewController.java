@@ -34,12 +34,22 @@ public class ReviewController {
 		return mview;
 	}
 	
-	@GetMapping("insertReview")
+	@GetMapping("insertReviewForm")
+	public ModelAndView insertReviewForm(@RequestParam long oid) {
+		ModelAndView mview=new ModelAndView();
+		
+		mview.addObject("oid", oid);
+		mview.setViewName("review/review_insertForm");
+		
+		return mview;
+	}
+	
+	@PostMapping("insertReview")
 	public String insertReview(@ModelAttribute ReviewDto dto) {
 		
-		/* dao.insert_review(dto); */
+		dao.insert_review(dto); 
 		
-		return "review/review_insertForm";
+		return "redirect:reviewList";
 	}
 	
 	
@@ -64,7 +74,7 @@ public class ReviewController {
 	
 	@PostMapping("updateReview")
 	public String updateReview(@ModelAttribute ReviewDto dto) {
-		/* dao.insert_review(dto); */
+		dao.insert_review(dto); 
 		
 		return "redirect:reviewList";
 	}

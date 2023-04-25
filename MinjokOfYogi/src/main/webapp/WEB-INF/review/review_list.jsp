@@ -16,7 +16,6 @@ String loginUser = (String) session.getAttribute("loginUser");
 %>
 <body>
 	<h1>${loginUser }님의리뷰리스트</h1>
-	<button type="button" onclick="location.href='insertReview'">리뷰쓰기</button>
 	<table class="table table-bordered" style="width: 800px">
 		<tr>
 			<th>리뷰번호</th>

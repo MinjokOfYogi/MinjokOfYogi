@@ -12,7 +12,9 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <body>
-	<form action="insertReview" method="post" enctype="multipart/form-data">
+	<form action="insertReview" method="post">
+		<input type="hidden" value="${oid }" name="oid">
+		<input type="hidden" value="${sessionScope.loginUser }" name="uid">
 		<table class="table table-bordered" style="width: 500px">
 			<tr>
 				<th>별점</th>
@@ -21,7 +23,7 @@
 			</tr>
 			<tr>
 				<th>사진</th>
-				<td><input type="file" name="rphoto"></td>
+				<td><input type="text" name="rphoto"></td>
 			</tr>
 			<tr>
 				<th>내용</th>
