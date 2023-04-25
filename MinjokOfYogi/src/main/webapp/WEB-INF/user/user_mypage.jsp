@@ -41,7 +41,7 @@ String loginUser = (String) session.getAttribute("loginUser");
 	</table>
 	<button type="button" onclick="location.href='pickList?loginUser=${loginUser}'">찜목록</button>
 	<button type="button" onclick="location.href='reviewList'">리뷰목록</button>
-	<button type="button" onclick="location.href='ordersList?loginUser=${loginUser}'">주문목록</button>
+	<button type="button" onclick="location.href='ordersList'">주문목록</button>
 	<br>
 	<button type="button" onclick="location.href='/'">메인으로</button>
 </body>

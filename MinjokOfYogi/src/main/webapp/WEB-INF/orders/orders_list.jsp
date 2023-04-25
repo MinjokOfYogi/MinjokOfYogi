@@ -39,7 +39,10 @@ String loginUser = (String) session.getAttribute("loginUser");
 				<td>${dto.opayment }</td>
 				<td>${dto.oday }</td>
 				<td>${dto.ostatus }</td>
-				<td><button type="button" onclick="location.href='insertReviewForm?oid=${dto.oid}'">리뷰쓰기</button></td>
+				<td>
+				<button type="button" onclick="location.href='insertReviewForm?oid=${dto.oid}'">리뷰쓰기</button>
+				<button type="button" onclick="location.href='delete?oid=${dto.oid }'">삭제</button>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>

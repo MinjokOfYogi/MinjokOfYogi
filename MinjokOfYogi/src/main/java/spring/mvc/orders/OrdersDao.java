@@ -19,7 +19,11 @@ public class OrdersDao {
 	
 	public List<OrdersDto> getOrderById(String loginUser){
 		UserDto dto=userDao.getUser(loginUser);
-		
+
 		return ordersInter.findAllByUid(dto);
 	}
+	public void deleteOrder(long oid) {
+		ordersInter.deleteById(oid);
+	}
+	
 }
