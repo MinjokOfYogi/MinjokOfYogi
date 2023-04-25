@@ -32,6 +32,6 @@ String loginUser = (String) session.getAttribute("loginUser");
 		</c:forEach>
 	</table>
 
-	<button type="button" onclick="history.back()">뒤로가기</button>
+	<button type="button" onclick="location.href='mypage'">뒤로가기</button>
 </body>
 </html>
