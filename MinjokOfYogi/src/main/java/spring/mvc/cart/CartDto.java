@@ -6,7 +6,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.ColumnDefault;
@@ -17,7 +21,9 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import spring.mvc.menu.MenuDto;
+import spring.mvc.restaurant.RestaurantDto;
 import spring.mvc.user.UserDto;
 
 @DynamicInsert
@@ -27,27 +33,21 @@ import spring.mvc.user.UserDto;
 @Setter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class CartDto {
 
 	@Id
-    @Column(name = "CART_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long cid;
+	@Column(name = "CART_id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long cid;
 
-    @ManyToOne
-    @JoinColumn(name = "USER_id")
-    private UserDto uid;
+	@ManyToOne
+	@JoinColumn(name = "USER_id", referencedColumnName = "USER_id")
+	private UserDto uid;
 
-    @ManyToOne
-    @JoinColumn(name = "MENU_id")
-    @ColumnDefault("0")
-    private MenuDto mid;
-
-    @Column(name = "CART_count")
-    private int ccount;
-
-    public CartDto() {
-        this.uid = new UserDto(); // UserDto 객체 초기화
-    }
+	@ManyToOne
+	@JoinColumn(name = "MENU_id", referencedColumnName = "MENU_id")
+	private MenuDto mid;
 
 }

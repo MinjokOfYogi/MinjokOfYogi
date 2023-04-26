@@ -30,18 +30,18 @@ import spring.mvc.user.UserDto;
 @NoArgsConstructor
 @ToString
 public class PickDto {
-	
+
 	@Id
 	@Column(name = "PICK_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long pid;
-	
+
 	@ManyToOne
-	@JoinColumn(name = "USER_id")
+	@JoinColumn(name = "USER_id", referencedColumnName = "USER_id")
 	private UserDto uid;
-	
+
 	@ManyToOne
-	@JoinColumn(name = "RST_id")
+	@JoinColumn(name = "RST_id", referencedColumnName = "RST_id")
 	private RestaurantDto rid;
 
 }

@@ -16,23 +16,33 @@ String loginUser = (String) session.getAttribute("loginUser");
 %>
 <body>
 	<h1>${loginUser }님의리뷰리스트</h1>
-	<button type="button" onclick="location.href='insertReview'">리뷰쓰기</button>
 	<table class="table table-bordered" style="width: 800px">
 		<tr>
 			<th>리뷰번호</th>
 			<th>주문번호</th>
 			<th>메뉴명</th>
-			<th>주문자명</th>
+			<th>주문자 아이디</th>
 			<th>별점</th>
 			<th>리뷰내용</th>
 			<th>사진</th>
+			<th>편집</th>
 		</tr>
-		<%-- <c:forEach>
+		<c:forEach var="dto" items="${list }" varStatus="i">
 			<tr>
-
+				<td>${dto.rid }</td>
+				<td>${dto.oid.getOid() }</td>
+				<td>${dto.oid.getCid().iterator().next().getMid().getMname() }</td>
+				<td>${dto.uid.getUid() }</td>
+				<td>${dto.rstars }</td>
+				<td>${dto.rcontent }</td>
+				<td>${dto.rphoto }</td>
+				<td>
+					<button type="button" onclick="location.href='getReview?rid=${dto.rid}'">수정</button>
+					<button type="button" onclick="location.href='deleteReview?rid=${dto.rid}'">삭제</button>
+				</td>
 			</tr>
-		</c:forEach> --%>
+		</c:forEach>
 	</table>
-	<button type="button" onclick="history.back()">뒤로가기</button>
+	<button type="button" onclick="location.href='mypage'">뒤로가기</button>
 </body>
 </html>

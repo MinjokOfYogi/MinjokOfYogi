@@ -12,22 +12,23 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <body>
-	<form action="insertReview" method="post">
-		<input type="hidden" value="${oid }" name="oid">
-		<input type="hidden" value="${sessionScope.loginUser }" name="uid">
+	<form action="updateReview" method="post">
+		<input type="hidden" value="${dto.rid }" name="rid"> <input
+			type="hidden" value="${dto.oid.getOid() }" name="oid"> <input
+			type="hidden" value="${dto.uid.getUid() }" name="uid">
 		<table class="table table-bordered" style="width: 500px">
 			<tr>
 				<th>별점</th>
 				<td><input type="text" pattern="^[1-5]+$"
-					placeholder="1~5까지 입력가능" name="rstars"></td>
+					value="${dto.rstars }" name="rstars"></td>
 			</tr>
 			<tr>
 				<th>사진</th>
-				<td><input type="text" name="rphoto"></td>
+				<td><input type="text" name="rphoto" value="${dto.rphoto }"></td>
 			</tr>
 			<tr>
 				<th>내용</th>
-				<td><textarea name="rcontent"></textarea></td>
+				<td><textarea name="rcontent">${dto.rcontent }</textarea></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center"><button type="submit"

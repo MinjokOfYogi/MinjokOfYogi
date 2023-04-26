@@ -1,5 +1,6 @@
 package spring.mvc.orders;
 
+import java.sql.ResultSet;
 import java.sql.Timestamp;
 import java.util.Set;
 
@@ -20,6 +21,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import spring.mvc.cart.CartDto;
 import spring.mvc.user.UserDto;
 
@@ -30,6 +32,7 @@ import spring.mvc.user.UserDto;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class OrdersDto {
 	
 	@Id
@@ -38,7 +41,7 @@ public class OrdersDto {
 	private long oid;
 	
 	@ManyToOne
-	@JoinColumn(name = "USER_id")
+	@JoinColumn(name = "USER_id", referencedColumnName = "USER_id")
 	private UserDto uid;
 	
 	@OneToMany
@@ -46,13 +49,13 @@ public class OrdersDto {
 	private Set<CartDto> cid;
 	
 	@Column(name = "ORD_method")
-	private String method;
+	private String omethod;
 	
 	@Column(name = "ORD_request")
-	private String request;
+	private String orequest;
 	
 	@Column(name = "ORD_payment")
-	private String payment;
+	private String opayment;
 	
 	@CreationTimestamp
 	@Column(name = "ORD_day", updatable = false)
