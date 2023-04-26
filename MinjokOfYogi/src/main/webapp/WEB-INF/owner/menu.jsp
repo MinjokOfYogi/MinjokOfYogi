@@ -13,16 +13,21 @@
 
 </head>
 <body>
+<h4> 식당명 : ${rname }</h4>
 <table class="table table-bordered" style="width: 500px;">
 <c:forEach var="dto" items="${list }">
-
 <tr><td rowspan="4">이미지</td><td>${dto.mid}> ${dto.mname}</td></tr>
 <tr><td>${dto.mprice }</td></tr>
 <tr><td>${dto.mdesc }</td></tr>
 <tr><td>${dto.mcategory }</td></tr>
 <tr><td>
 <!-- 장바구니에 넣기 + 로그인한사람 id + dto.mid -->
-<button type="button" onclick="location.href='menu/cart?num=${dto.mid}&id=#'"></button>
+<c:if test="${sessionScope.loginUser!=null}">
+<button type="button" onclick="location.href='menu/detail?num=${dto.mid}&id=${sessionScope.loginUser }'">장바구니에넣기</button>
+</c:if>
+<c:if test="${sessionScope.loginUser==null }">
+로그인후 이용해주세요
+</c:if>
 </td></tr>
 
 </c:forEach>

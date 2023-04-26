@@ -14,17 +14,17 @@
 </head>
 <body>
 
-<c:forEach var="dto" items="${list }">
 <table class="table table-bordered" style="width: 500px;">
 <caption>식당목록</caption>
+<c:forEach var="dto" items="${list }">
 <tr>
 <td>식당 seq: ${dto.rid }</td><td><a href="list/menu?num=${dto.rid}"> ${dto.rname }</a></td>
 </tr>
 <tr>
 <td> 주인 seq: ${dto.rcategory }</td>
 </tr>
-</table>
 </c:forEach>
+</table>
 
 </body>
 </html>

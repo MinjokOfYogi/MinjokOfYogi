@@ -10,8 +10,9 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+
 </head>
 <body>
-<button type="button" onclick="location.href='/join/user'">일반 회원가입</button>
+
 </body>
 </html>

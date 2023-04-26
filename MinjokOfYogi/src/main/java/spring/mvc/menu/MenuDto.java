@@ -43,5 +43,5 @@ public class MenuDto {
 	private String mdesc;
 	
 	@Column(name = "MENU_category")
-	private int mcategory;
+	private String mcategory;
 }

@@ -16,7 +16,7 @@ public class UserController {
 	@Autowired
 	UserDao dao;
 
-	@GetMapping("/join/user")
+	@GetMapping("/join")
 	public String registform() {
 		return "/user/user_join";
 	}
@@ -32,9 +32,7 @@ public class UserController {
 	public String login_user(@RequestParam String uid, @RequestParam String upw, HttpSession session) {
 		UserDto dto = dao.getUser(uid);
 
-		if (dto == null)
-			return "/user/user_loginfail";
-		else if (dto.getUid().equals(uid) && dto.getUpw().equals(upw)) {
+		if (dto.getUid().equals(uid) && dto.getUpw().equals(upw)) {
 			session.setAttribute("loginUser", uid);
 			return "redirect:/";
 

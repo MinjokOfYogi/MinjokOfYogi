@@ -16,4 +16,5 @@ public class UserDao {
 	public UserDto getUser(String uid) {
 		return userInter.findById(uid).orElse(null);
 	}
+	
 }
